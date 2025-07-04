@@ -13,7 +13,8 @@ export default function Home() {
     const formData = new FormData();
     formData.append('file', file);
     try {
-      const res = await axios.post('https://agentacc.onrender.com/api/generate-voucher', formData);
+      const backendUrl = "https://agentacc1.onrender.com";
+      const res = await axios.post(`${backendUrl}/api/generate-voucher`, formData);
       setResult(res.data);
     } catch (err) {
       console.error(err);
